@@ -54,8 +54,8 @@ public class SparseArray {
         }
 
         System.out.println("稀疏数组输出方式2");
-        for (int i = 0; i < sparseArray.length; i++) {
-            System.out.printf("%d\t%d\t%d\t\n", sparseArray[i][0], sparseArray[i][1], sparseArray[i][2]);
+        for (int[] result : sparseArray) {
+            System.out.printf("%d\t%d\t%d\t\n", result[0], result[1], result[2]);
         }
     }
 
@@ -122,16 +122,17 @@ public class SparseArray {
 
         //TODO 2.给二维数组赋值
         //稀疏数组的总行数
-        int sparseArrayRow = sparseArray[0][2];
-        sparseArrayRow = sparseArray.length;
+        int sparseArrayRow = sparseArray.length;
+        //int sparseArrayRow = sparseArray[0][2];
 
         for (int row = 1; row < sparseArrayRow; row++) {
-            /**
-             * sparseArray[row][0]  行
-             * sparseArray[row][1]  列
-             * sparseArray[row][2]  值
-             */
-            chessArray[sparseArray[row][0]][sparseArray[row][1]] = sparseArray[row][2];
+            //行
+            int r = sparseArray[row][0];
+            //列
+            int l = sparseArray[row][1];
+            //值
+            int value =  sparseArray[row][2];
+            chessArray[r][l] = value;
         }
         return chessArray;
     }
