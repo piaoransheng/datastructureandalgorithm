@@ -1,5 +1,7 @@
 package algorithm.sort;
 
+import java.util.Arrays;
+
 /**
  * 冒泡排序
  *
@@ -8,11 +10,11 @@ package algorithm.sort;
  **/
 public class BubbleSort {
     public static void main(String[] args) {
-        int[] arr = {7,6,1, 3, 5, 4, 2};
+        int[] arr = {7, 6, 1, 3, 5, 4, 2};
         int size = arr.length;
         //进行数组的大小-1次循环
-        for (int i = 0; i < size - 1; i++) {
-            for (int index = 0; index < size - 2; index++) {
+        for (int i = 0; i <= size - 1; i++) {
+            for (int index = 0; index <= size - 2; index++) {
                 int firstNum = arr[index];
                 int secondNum = arr[index + 1];
                 if (firstNum > secondNum) {
@@ -22,9 +24,6 @@ public class BubbleSort {
             }
         }
 
-        for (int i = 0; i < size - 1; i++) {
-            System.out.println(arr[i]);
-        }
-
+        System.out.println(Arrays.toString(arr));
     }
 }
